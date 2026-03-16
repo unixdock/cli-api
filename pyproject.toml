@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cli-api"
+version = "0.1.0"
+description = "CLI-API: CLI-First Universal Protocol (CAP) — one command to unify agents"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "cli-api contributors" }]
+keywords = ["cli", "agent", "llm", "cap", "protocol", "ai"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries :: Application Frameworks",
+]
+
+dependencies = [
+  "typer>=0.12.0",
+  "rich>=13.0.0",
+  "httpx>=0.27.0",
+  "pydantic>=2.0.0",
+  "anyio>=4.0.0",
+  "prompt_toolkit>=3.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0",
+  "pytest-anyio>=0.0.0",
+  "anyio[trio]>=4.0.0",
+  "respx>=0.20.0",
+  "ruff>=0.4.0",
+]
+
+[project.scripts]
+cli-api = "cli_api.main:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cli_api*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
