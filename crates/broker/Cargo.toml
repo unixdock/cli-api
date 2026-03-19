@@ -1,0 +1,29 @@
+[package]
+name = "cli-api-broker"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "CLI-API Broker - Universal agent call routing service"
+keywords = ["broker", "router", "proxy", "agent"]
+categories = ["web-programming", "api-bindings"]
+
+[[bin]]
+name = "broker"
+path = "src/main.rs"
+
+[dependencies]
+cap-protocol = { path = "../cap-protocol" }
+mcp-adapter = { path = "../adapters/mcp-adapter" }
+a2a-adapter = { path = "../adapters/a2a-adapter" }
+agent-protocol-adapter = { path = "../adapters/agent-protocol-adapter" }
+openai-adapter = { path = "../adapters/openai-adapter" }
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+reqwest.workspace = true
+uuid.workspace = true
+async-trait = "0.1"

@@ -1,0 +1,24 @@
+[package]
+name = "cli-api"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Universal CLI for calling any AI agent through CLI-Agent Protocol"
+keywords = ["cli", "ai", "agent", "protocol", "api"]
+categories = ["command-line-utilities", "api-bindings"]
+
+[[bin]]
+name = "cli-api"
+path = "src/main.rs"
+
+[dependencies]
+cap-protocol = { path = "../cap-protocol" }
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+reqwest.workspace = true
+uuid.workspace = true

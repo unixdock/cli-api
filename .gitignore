@@ -1,0 +1,40 @@
+# Rust
+/target/
+Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local configuration
+.env
+.env.local
+config.toml
+
+# Build artifacts
+dist/
+build/
+
+# Test coverage
+tarpaulin-report.html
+
+# Development
+/tmp/
+*.pid
+
+# Documentation build
+book/
+site/
+
+# CLI-API specific
+.cli-api/

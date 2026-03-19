@@ -1,0 +1,24 @@
+[package]
+name = "cli-api-hub"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "CLI-API Hub - Agent registry and discovery service"
+keywords = ["hub", "registry", "discovery", "agent"]
+categories = ["web-programming", "api-bindings"]
+
+[[bin]]
+name = "hub"
+path = "src/main.rs"
+
+[dependencies]
+cap-protocol = { path = "../cap-protocol" }
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+reqwest.workspace = true
+uuid.workspace = true
